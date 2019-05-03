@@ -1,17 +1,21 @@
 'use strict';
 
-/**
- * @ngdoc function
- * @name appAngApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the appAngApp
- */
-angular.module('appAngApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+var app = angular.module('appAngApp', []);
+
+
+app.controller('MainCtrl', function ($scope) {
+  $scope.age = 50;
+
+  $scope.showContent = false;
+
+  $scope.checkAge = function () {
+    return ($scope.age >= 18) ? "majeur" : "mineur";
+  };
+
+
+  this.awesomeThings = [
+    'HTML5 Boilerplate',
+    'AngularJS',
+    'Karma'
+  ];
+});
